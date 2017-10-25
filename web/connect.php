@@ -6,10 +6,10 @@
 
     $database_url = getenv('CLEARDB_DATABASE_URL');
     if ($database_url != false) {
-        $host = 'HOST';
-        $dbname = 'DBNAME';
-        $username = "USERNAME";
-        $password = "PASSWORD";
+        $host = 'DATABASE_HOST';
+        $dbname = 'DATABASE_DBNAME';
+        $username = "DATABASE_USERNAME";
+        $password = "DATABASE_PASSWORD";
     }
 
     $dsn = "mysql:host=$host;charset=utf8"; // Note: Doesn't include a dbname
