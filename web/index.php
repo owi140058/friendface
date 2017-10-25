@@ -16,6 +16,13 @@
 
     $app->register(new Silex\Provider\SessionServiceProvider());
 
+    // Globals
+    $app['webroot'] = getenv('WEBROOT');
+    if ($app['webroot'] == false) {
+    $app['webroot'] = '/friendface/web/';
+    }
+    $app['twig']->addGlobal('webroot', $app['webroot']);
+
 
 
     $app['debug'] = true;
@@ -69,7 +76,7 @@
            
        $app->get('/friends', function(Request $request) use ($app) {
             if (!$app['session']->has('id')) {
-                return $app->redirect('/friendface/web/login');
+                return $app->redirect($app['webroot'].'login');
             }
             $friend_requests = get_friend_request_users($app['session']->get('id'));
             $friends = get_friend_users($app['session']->get('id'));

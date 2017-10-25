@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Account</title>
-        <link rel="stylesheet" href="/friendface/web/style/global.css">
+        <link rel="stylesheet" href="{{ webroot }}style/global.css">
     </head>
     <body>
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -17,8 +17,8 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="/friendface/web/settings">SETTINGS</a></li>
-                    <li><a href="/friendface/web/friends">FRIENDS</a></li>
+                    <li><a href="{{ webroot }}settings">SETTINGS</a></li>
+                    <li><a href="{{ webroot }}friends">FRIENDS</a></li>
                 </ul>
             </nav>
         </header>

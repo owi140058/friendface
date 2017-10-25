@@ -3,7 +3,7 @@
         {% for user in results %}
         <div class="user">
             <div class="pic"
-                 style="background: url(/account/web{{ user.avatar_path }})"></div>
+                 style="background: url({{ webroot }}{{ user.avatar_path }})"></div>
         <div class="name">{{ user.name }}</div>
         <form class="view-form" name="view-form"
               action="/account/web/view" method="POST">
