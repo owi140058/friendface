@@ -6,8 +6,8 @@
 
     $database_url = getenv('CLEARDB_DATABASE_URL');
     if ($database_url != false) {
-        $host = 'DATABASE_HOST';
-        $dbname = 'DATABASE_DBNAME';
+        $host = "DATABASE_HOST";
+        $dbname = "DATABASE_DBNAME";
         $username = "DATABASE_USERNAME";
         $password = "DATABASE_PASSWORD";
     }
