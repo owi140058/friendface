@@ -1,9 +1,18 @@
 <?php
     $host = 'localhost:8889';
     $dbname = 'account';
-    $dsn = "mysql:host=$host;charset=utf8"; // Note: Doesn't include a dbname
     $username = "root";
     $password = "root";
+
+    $database_url = getenv('CLEARDB_DATABASE_URL');
+    if ($database_url != false) {
+        $host = 'HOST';
+        $dbname = 'DBNAME';
+        $username = "USERNAME";
+        $password = "PASSWORD";
+    }
+
+    $dsn = "mysql:host=$host;charset=utf8"; // Note: Doesn't include a dbname
 
     try {
         $pdo = new PDO($dsn, $username, $password);
